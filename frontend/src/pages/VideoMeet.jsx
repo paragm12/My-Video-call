@@ -13,13 +13,13 @@ import StopScreenShareIcon from '@mui/icons-material/StopScreenShare'
 import ChatIcon from '@mui/icons-material/Chat'
 import server from '../environment';
 
-const server_url = server;
+const server_url = "http://localhost:8000";
 
 var connections = {};
 
 const peerConfigConnections = {
     "iceServers": [
-        { "urls": "stun:stun.l.google.com:19302" }
+        { "urls": "stun:stun1.l.google.com:19302" }
     ]
 }
 
@@ -190,6 +190,8 @@ export default function VideoMeetComponent() {
         })
     }
 
+
+    
     let getUserMedia = () => {
         if ((video && videoAvailable) || (audio && audioAvailable)) {
             navigator.mediaDevices.getUserMedia({ video: video, audio: audio })
